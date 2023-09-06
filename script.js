@@ -1,8 +1,8 @@
  // JavaScript to handle the fullscreen functionality
- const fullscreenButton = document.getElementById('fullscreen-button');
+ const fullScreenButton = document.getElementById('fullscreen-button');
 
  // Function to enter fullscreen mode
- function enterFullscreen() {
+ function enterFullScreen() {
      if (document.documentElement.requestFullscreen) {
          document.documentElement.requestFullscreen();
      } else if (document.documentElement.mozRequestFullScreen) { // Firefox
@@ -15,4 +15,9 @@
  }
 
  // Attach the enterFullscreen function to the button click event
- fullscreenButton.addEventListener('click', enterFullscreen);
+ fullScreenButton.addEventListener('click', enterFullScreen);
+
+ fullScreenButton.addEventListener('click', () => {
+  enterFullScreen();
+  fullScreenButton.classList.add('removed');
+});

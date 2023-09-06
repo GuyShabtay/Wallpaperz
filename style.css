@@ -5,3 +5,6 @@
   border: none;
   cursor: pointer;
 }
+.removed{
+  display: none;
+}
