@@ -33,44 +33,32 @@ document.addEventListener('fullscreenchange', handleFullscreenChange);
 const imageElement = document.getElementById('image');
 const showImageButton = document.getElementById('showImage');
 
+const backgroundImage = document.getElementById('background-image');
+
 function changeBackground() {
-
-  fetch('https://source.unsplash.com/random')
-      .then(response => {
-          if (response.ok) {
-            imageElement.src = response.url;
-            // imageElement.style.transition= 'opacity 3s'; 
-          
-            
-           
-            // imageElement.classList.toggle('animate');
-            // imageElement.classList.toggle('animate2');
-          } else {
-              console.error('Failed to fetch image from Unsplash.');
-          }
-      })
-      .catch(error => {
-          console.error('Error fetching image:', error);
-      });
+  fetch('https://source.unsplash.com/random/1920x1080') // Change the size as needed
+    .then(response => {
+      if (response.ok) {
+        return response.url;
+      } else {
+        throw new Error('Failed to fetch image from Unsplash.');
+      }
+    })
+    .then(imageUrl => {
+      backgroundImage.style.transform = 'translateX(-10%)'; 
+      setTimeout(() => {
+        backgroundImage.src = 'https://source.unsplash.com/random/1920x1080'; // Change the background image
+        backgroundImage.style.transform = 'translateX(0%)'; 
+      }, 10000); // Adjust the duration (2 seconds) as needed
+    })
+    .catch(error => {
+      console.error('Error fetching image:', error);
+    });
 }
 
-let leftPosition = 0;
+// Initial background load
+changeBackground();
 
-function moveLeft() {
-  leftPosition -= 50; // Move 50 pixels to the left
-
-  // Animate the element's left position
-  $('#moving-element').animate({ left: leftPosition }, 1000); // Adjust the duration as needed
-}
-
-
-console.log("first")
-// Call the function initially
-// changeBackground();
-
-// setInterval(function () {element.innerHTML += "Hello"}, 1000);
-
-
-// Set an interval to change the background image every 2 seconds
-setInterval((changeBackground,moveLeft), 3000); 
+// Change the background every 3 seconds
+setInterval(changeBackground, 10000);
 
