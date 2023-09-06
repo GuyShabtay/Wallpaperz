@@ -13,6 +13,7 @@ body{
   height: 100vh;
   overflow: hidden;
   flex-direction: column;
+  color: white;
   
 }
 #background-image {
@@ -92,4 +93,5 @@ display: none;
 }
 h1{
   font-weight: bolder;
+  font-size: 10rem;
 }
