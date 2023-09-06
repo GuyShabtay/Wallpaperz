@@ -1,5 +1,6 @@
 // JavaScript to handle the fullscreen functionality
 const fullscreenButton = document.getElementById('fullscreen-button');
+const mainContainer = document.getElementById('main-container');
 
 // Function to enter fullscreen mode
 function enterFullscreen() {

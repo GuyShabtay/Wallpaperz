@@ -13,8 +13,6 @@ body{
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  flex-direction: column;
-  color: white;
   
 }
 #background-image {
@@ -76,7 +74,7 @@ body{
   background-color: black; /* Change to your desired hover background color */
   color: white; /* Change to your desired hover text color */
   
-  border: solid 1px black;
+  border: none;
   cursor: pointer;
   transition: all 0.5s;
   font-size: larger;
@@ -86,7 +84,7 @@ body{
 #fullscreen-button:hover {
   background-color: white;
   color: black;
-  transform: scale(1.2); /* Add a slight scale effect on hover */
+  transform: scale(1.1); /* Add a slight scale effect on hover */
 }
 .removed{
 /* opacity:0; */
@@ -103,4 +101,13 @@ h2{
   margin-bottom: 15px;
 
 
+}
+
+#main-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  flex-direction: column;
+  color: white;
 }
