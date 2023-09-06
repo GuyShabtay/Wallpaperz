@@ -1,4 +1,3 @@
-// JavaScript to handle the fullscreen functionality
 const fullscreenButton = document.getElementById('fullscreen-button');
 const mainContainer = document.getElementById('main-container');
 
@@ -36,23 +35,23 @@ const showImageButton = document.getElementById('showImage');
 
 const backgroundImage = document.getElementById('background-image');
 function changeBackground() {
-  const imageURL='https://source.unsplash.com/random/1920x1080';
-  fetch(imageURL) // Change the size as needed
-    .then(response => {
+  const imageURL = 'https://source.unsplash.com/random/1920x1080';
+  fetch(imageURL)
+    .then((response) => {
       if (response.ok) {
         return response.url;
       } else {
         throw new Error('Failed to fetch image from Unsplash.');
       }
     })
-    .then(imageUrl => {
-      backgroundImage.style.transform = 'translateX(-10%)'; 
+    .then((imageUrl) => {
+      backgroundImage.style.transform = 'translateX(-10%)';
       setTimeout(() => {
         backgroundImage.src = imageURL; // Change the background image
-        backgroundImage.style.transform = 'translateX(0%)'; 
-      }, 10000); // Adjust the duration (2 seconds) as needed
+        backgroundImage.style.transform = 'translateX(0%)';
+      }, 10000);
     })
-    .catch(error => {
+    .catch((error) => {
       console.error('Error fetching image:', error);
     });
 }
@@ -62,4 +61,3 @@ changeBackground();
 
 // Change the background every 3 seconds
 setInterval(changeBackground, 10000);
-
