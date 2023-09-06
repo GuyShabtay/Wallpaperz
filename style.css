@@ -19,15 +19,16 @@ body{
 animation-delay: 5s;
 animation-timing-function: ease-in-out;
 -webkit-animation-timing-function: ease-in-out;  */
-
 }
-#image {
-  /* opacity: 1;  */
-  /* transition: opacity 2s;  */
-  animation: move 3s;
-  width:110vw;
+#background-image {
+  /* transform: translateX(100%); */
   position: absolute;
-  z-index: -1;
+  top: 0;
+  right: -25vw;
+  /* background-size: cover; */
+  width:125vw;
+  height: auto;
+  transition: transform 10s ease-in; /* Smooth scroll transition */
 }
 
 .animate{
