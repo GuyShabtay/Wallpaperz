@@ -29,3 +29,16 @@ function handleFullscreenChange() {
 
 // Add event listener for fullscreen change
 document.addEventListener('fullscreenchange', handleFullscreenChange);
+
+
+function changeBackground() {
+  const imageUrl = 'https://source.unsplash.com/random';
+  document.body.style.backgroundImage = `url('${imageUrl}')`;
+}
+
+// Call the function initially
+changeBackground();
+
+// Set an interval to change the background image every 2 seconds
+setInterval(changeBackground, 2000); // 2000 milliseconds = 2 seconds
+
