@@ -11,6 +11,7 @@ body{
   border: solid 1px black;
   width: 100vw;
   height: 100vh;
+  background: url('https://source.unsplash.com/random') no-repeat center center/cover;
 
 }
 #fullscreen-button {
@@ -19,7 +20,7 @@ body{
   color: black;
   border: solid 1px black;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.5s;
   font-size: larger;
   
 }
@@ -30,5 +31,6 @@ body{
   transform: scale(1.2); /* Add a slight scale effect on hover */
 }
 .removed{
-  display: none;
+/* opacity:0; */
+display: none;
 }
