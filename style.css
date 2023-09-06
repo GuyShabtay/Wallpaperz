@@ -11,11 +11,67 @@ body{
   border: solid 1px black;
   width: 100vw;
   height: 100vh;
-  background: url('https://source.unsplash.com/random') no-repeat center center/cover;
-  transition: background 2s; /* Add a transition to smoothly change the background image */
-
+  overflow: hidden;
+  /* background: url('https://source.unsplash.com/random') no-repeat center center/cover; */
+  /* transition: background 5s ease-in-out; */
+  /* animation: fade 5s; */
+   /* animation: mymove 5s;
+animation-delay: 5s;
+animation-timing-function: ease-in-out;
+-webkit-animation-timing-function: ease-in-out;  */
 
 }
+#image {
+  /* opacity: 1;  */
+  /* transition: opacity 2s;  */
+  animation: move 3s;
+  width:110vw;
+  position: absolute;
+  z-index: -1;
+}
+
+.animate{
+  animation: fade 3.5s ;
+
+}
+.animate2{
+  animation: fade 3s ;
+
+}
+
+ @keyframes fade {
+  0% { opacity:0; }
+  30% { opacity:1; }
+  70% { opacity:1; }
+  100% { opacity:0; }
+} 
+ @keyframes move {
+  /* 0% { opacity:0; }
+  30% { opacity:1; }
+  70% { opacity:1; }
+  100% { opacity:0; } */
+  /* frim{
+
+  } */
+  to{
+    transformX: -50px; 
+  }
+
+
+} 
+ /* @keyframes mymove {
+  0% { background: url('https://picsum.photos/1024/1024 no-repeat center center/cover'); }
+50% { background-color:rgba(0, 0, 0, 0.5); }
+51% {     background: url('https://picsum.photos/1024/1024 no-repeat center center/cover'); }
+100% { background-color:rgba(0, 0, 0, 1); }
+}  */
+ 
+/* background-image{
+  animation: fade 3s;
+
+}  */
+
+
 #fullscreen-button {
   padding: 20px 40px;
   background-color: white;
