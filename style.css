@@ -1,9 +1,27 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: solid 1px black; */
+  width: 100vw;
+  height: 100vh;
+
+}
 #fullscreen-button {
-  padding: 10px 20px;
-  background-color: #3498db;
-  color: #fff;
-  border: none;
+  padding: 20px 40px;
+  background-color: white;
+  color: black;
+  border: solid 1px black;
   cursor: pointer;
+  transition: all 0.3s;
+  font-size: larger;
+  
+}
+
+#fullscreen-button:hover {
+  background-color: black; /* Change to your desired hover background color */
+  color: white; /* Change to your desired hover text color */
+  transform: scale(1.2); /* Add a slight scale effect on hover */
 }
 .removed{
   display: none;
