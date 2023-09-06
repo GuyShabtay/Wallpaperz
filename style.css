@@ -12,6 +12,7 @@ body{
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  flex-direction: column;
   
 }
 #background-image {
@@ -23,6 +24,7 @@ body{
   width:125vw;
   height: auto;
   transition: transform 10s ease-in; /* Smooth scroll transition */
+  z-index: -1;
 }
 
 .animate{
@@ -69,8 +71,9 @@ body{
 
 #fullscreen-button {
   padding: 20px 40px;
-  background-color: white;
-  color: black;
+  background-color: black; /* Change to your desired hover background color */
+  color: white; /* Change to your desired hover text color */
+  
   border: solid 1px black;
   cursor: pointer;
   transition: all 0.5s;
@@ -79,11 +82,14 @@ body{
 }
 
 #fullscreen-button:hover {
-  background-color: black; /* Change to your desired hover background color */
-  color: white; /* Change to your desired hover text color */
+  background-color: white;
+  color: black;
   transform: scale(1.2); /* Add a slight scale effect on hover */
 }
 .removed{
 /* opacity:0; */
 display: none;
+}
+h1{
+  font-weight: bolder;
 }
