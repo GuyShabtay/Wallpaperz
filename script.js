@@ -34,9 +34,9 @@ const imageElement = document.getElementById('image');
 const showImageButton = document.getElementById('showImage');
 
 const backgroundImage = document.getElementById('background-image');
-
 function changeBackground() {
-  fetch('https://source.unsplash.com/random/1920x1080') // Change the size as needed
+  const imageURL='https://source.unsplash.com/random/1920x1080';
+  fetch(imageURL) // Change the size as needed
     .then(response => {
       if (response.ok) {
         return response.url;
@@ -47,7 +47,7 @@ function changeBackground() {
     .then(imageUrl => {
       backgroundImage.style.transform = 'translateX(-10%)'; 
       setTimeout(() => {
-        backgroundImage.src = 'https://source.unsplash.com/random/1920x1080'; // Change the background image
+        backgroundImage.src = imageURL; // Change the background image
         backgroundImage.style.transform = 'translateX(0%)'; 
       }, 10000); // Adjust the duration (2 seconds) as needed
     })
