@@ -88,13 +88,14 @@ body{
 }
 .removed{
 /* opacity:0; */
-display: none;
+display: none !important;
 }
 h1{
   font-weight: bolder;
   font-size: 10rem;
   box-shadow:  0 4px 5px rgba(0, 0, 0, 0.7);
   margin-bottom: 15px;
+  padding:0 40px;
 
 }
 h2{

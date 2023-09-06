@@ -24,8 +24,8 @@ fullscreenButton.addEventListener('click', enterFullscreen);
 // Function to handle fullscreen change event
 function handleFullscreenChange() {
   document.fullscreenElement !== null
-    ? fullscreenButton.classList.add('removed')
-    : fullscreenButton.classList.remove('removed');
+    ? mainContainer.classList.add('removed')
+    : mainContainer.classList.remove('removed');
 }
 
 // Add event listener for fullscreen change
