@@ -49,9 +49,12 @@ h1 {
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.7);
   margin-bottom: 15px;
   padding: 0 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* x-offset y-offset blur color */
+
 }
 h2 {
   margin-bottom: 15px;
+
 }
 
 #main-container {
