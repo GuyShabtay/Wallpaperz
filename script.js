@@ -1,3 +1,4 @@
+const apiKey = '_aSzAKgtQz4tc_5-ALrt6aDH7YHIKdOP1RBF2qi5bFI';
 const fullscreenButton = document.getElementById('fullscreen-button');
 const mainContainer = document.getElementById('main-container');
 
@@ -22,42 +23,53 @@ fullscreenButton.addEventListener('click', enterFullscreen);
 
 // Function to handle fullscreen change event
 function handleFullscreenChange() {
-  document.fullscreenElement !== null
-    ? mainContainer.classList.add('removed')
-    : mainContainer.classList.remove('removed');
+  if (document.fullscreenElement) {
+    mainContainer.classList.add('removed');
+  } else {
+    mainContainer.classList.remove('removed');
+  }
 }
 
 // Add event listener for fullscreen change
 document.addEventListener('fullscreenchange', handleFullscreenChange);
 
-const imageElement = document.getElementById('image');
-const showImageButton = document.getElementById('showImage');
-
 const backgroundImage = document.getElementById('background-image');
-function changeBackground() {
-  const imageURL = 'https://source.unsplash.com/random/1920x1080';
-  fetch(imageURL)
-    .then((response) => {
-      if (response.ok) {
-        return response.url;
-      } else {
-        throw new Error('Failed to fetch image from Unsplash.');
-      }
-    })
-    .then((imageUrl) => {
-      backgroundImage.style.transform = 'translateX(-10%)';
-      setTimeout(() => {
-        backgroundImage.src = imageURL; // Change the background image
-        backgroundImage.style.transform = 'translateX(0%)';
-      }, 10000);
-    })
-    .catch((error) => {
-      console.error('Error fetching image:', error);
-    });
+
+function preloadImage(url, callback) {
+  const img = new Image();
+  img.onload = () => callback(url);
+  img.src = url;
 }
 
-// Initial background load
-changeBackground();
+function changeBackground() {
+  const url = `https://api.unsplash.com/photos/random?client_id=${apiKey}`;
 
-// Change the background every 3 seconds
-setInterval(changeBackground, 10000);
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const imgUrl = data.urls.regular;
+
+      // Preload the image before applying the transition
+      preloadImage(imgUrl, () => {
+        // Apply transformation to move the image
+        backgroundImage.style.transition = 'transform 20s';
+        backgroundImage.style.transform = 'translateX(-10%)';
+
+        // Change the image source after the transformation
+        setTimeout(() => {
+          backgroundImage.src = imgUrl;
+          backgroundImage.style.transform = 'translateX(0%)';
+        }, 10000); 
+      });
+    })
+    .catch(error => console.error('Error fetching the image:', error));
+}
+
+// Initial background load once DOM is ready
+document.addEventListener("DOMContentLoaded", function() {
+  // Initial background load
+  changeBackground();
+  
+  // Change the background every 10 seconds
+  setInterval(changeBackground, 10000);
+});
