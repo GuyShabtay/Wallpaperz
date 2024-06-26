@@ -8,27 +8,24 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: solid 1px black; */
   width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
 #background-image {
-  /* transform: translateX(100%); */
   position: absolute;
   top: 0;
   right: -25vw;
-  /* background-size: cover; */
   width: 125vw;
   height: auto;
-  transition: transform 10s ease-in; /* Smooth scroll transition */
+  transition: transform 10s ease-in; 
   z-index: -1;
 }
 
 #fullscreen-button {
   padding: 20px 40px;
-  background-color: black; /* Change to your desired hover background color */
-  color: white; /* Change to your desired hover text color */
+  background-color: black; 
+  color: white; 
 
   border: none;
   cursor: pointer;
@@ -39,7 +36,7 @@ body {
 #fullscreen-button:hover {
   background-color: white;
   color: black;
-  transform: scale(1.1); /* Add a slight scale effect on hover */
+  transform: scale(1.1); 
 }
 .removed {
   display: none !important;
@@ -49,12 +46,12 @@ h1 {
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.7);
   margin-bottom: 15px;
   padding: 0 40px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* x-offset y-offset blur color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
 
 }
 h2 {
   margin-bottom: 15px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* x-offset y-offset blur color */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); 
 
 }
 
@@ -67,10 +64,6 @@ h2 {
   color: white;
 }
 #loading-text {
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);*/
   font-size: 24px;
   margin: 10px 0;
   color: #3c3c3c;
